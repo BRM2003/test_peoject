@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard {
+    width: 300px;
+    border-right: 2px solid;
+    border-image: linear-gradient(rgba(80, 18, 161), rgb(164, 79, 216)) 30;
+    height: 100vh;
+    position: fixed;
+}
+
+.user-info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+
+#user_image {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 25px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-image: linear-gradient(rgba(80, 18, 161), rgb(164, 79, 216)) 30;
+}
+
+.user-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
+}
+.username {
+    background: -webkit-linear-gradient(225deg, rgb(164, 79, 216), rgba(80, 18, 161) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.position {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.list_of_pages {
+    padding: 10px 20px;
+}
+.list {
+    list-style: none;
+}
+.page,
+.page.active {
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: all 300ms ease-in-out;
+    padding: 0 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.page > a {
+    transition: all 300ms ease-in-out;
+    color: black;
+    text-decoration: none;
+}
+/* .page.active {
+    background: linear-gradient(225deg, rgb(164, 79, 216, .7), rgba(80, 18, 161, .7) 80%);
+} */
+.page:hover {
+    background: linear-gradient(225deg, rgb(164, 79, 216), rgba(80, 18, 161) 80%);
+}
+.page:hover > a {
+    margin-left: 10px;
+    color: white;
+}
+
+
+/* main_page section styles */
+.main_page {
+    width: calc(100% - 300px);
+    height: 100%;
+    margin-left: 300px;
+    padding: 0 50px;
+}
+
+

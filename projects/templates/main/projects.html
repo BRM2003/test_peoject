@@ -1,0 +1,24 @@
+{% extends 'main/dashboard.html' %} 
+{% load static %} 
+{% block title %} Projects {% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'Main/Projects/projects_page_styles.css' %}">
+{% endblock %}
+
+{% block main_page %} 
+    <div class="page_title">
+        <h1 class="page_name">Projects</h1>
+        {% if is_superuser %}
+        <a href="/main/add_project">
+            <button class="add_project_btn">Add +</button>
+        </a>
+        {% endif %}
+    </div>
+    <div class="Project_filter">
+        
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'Main/Projects/projects_page_scripts.css' %}">
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Main/dashboard_styles.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <section class="dashboard">
+        <div class="user-info">
+            <img src="{% static 'Main/user_icon.png' %}" alt="Icon" srcset="" id="user_image">
+            <div class="user-info-text">
+                <h1 class="username">{{ user.username }}</h1>
+                <h4 class="position">{{ staff.position }}Full-stack Debeloper</h3>
+            </div>
+        </div>
+        <div class="list_of_pages">
+            <ul class="list">
+                {% if is_superuser %}
+                <li class="page"><a href="#">Projects</a></li>
+                {% endif %}
+                <li class="page"><a href="#">Tasks</a></li>
+                <li class="page"><a href="#">Staff</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="main_page">
+        {% block main_page %} {% endblock %}
+    </section>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

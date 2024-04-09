@@ -1,0 +1,34 @@
+{% extends 'main/dashboard.html' %} 
+{% load static %} 
+{% block title %} Tasks {% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'Main/Projects/projects_page_styles.css' %}">
+{% endblock %}
+
+{% block main_page %}
+        <form action="" method="post" id="add_project_form">
+            <div class="block_top">
+                <h1 class="form_name">Add new Project</h1>
+            </div>
+            {% csrf_token %}
+            <label for="id_Title">Title</label>
+            {{ add_proj_form.Title }}
+            <label for="id_Status">Status</label>
+            {{ add_proj_form.Status }}
+            <label for="id_Description">Description</label>
+            {{ add_proj_form.Description }}
+            <!-- {{ add_proj_form.Start_date }} -->
+            <label for="id_End_date_month" style="width: 100%;">Deadline</label>
+            <div class="date_value">
+                {{ add_proj_form.End_date }}
+            </div>
+            <div class="date_value">
+                <input type="submit" value="Save" class="add_project_btn">
+                <a href="/main/projects" class="back_btn"><span>Back</span></a>
+            </div>
+        </form>
+{% endblock %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'Main/Projects/projects_page_scripts.css' %}">
+{% endblock %}

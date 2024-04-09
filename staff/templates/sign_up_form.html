@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.username}}
+        <input type="email" name="email" id="email" placeholder="Email" required>
+        {{form.password}}
+        <input type="hidden" name="page_return" value="{{page_return}}">
+        <!-- <input type="password" name="password" id="password" placeholder="Parol" required> -->
+        <!-- <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
+        <!-- </div> -->
+        <input type="submit" value="Sign Up">
+        {% if error %}
+            <p class="error_message" style="color: #ff1d1d;">{{error}}</p>
+        {% endif %}
+        </form>
+</body>
+</html>
